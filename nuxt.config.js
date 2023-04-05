@@ -30,7 +30,26 @@ export default {
   buildModules: ["@nuxtjs/tailwindcss"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    [
+      "@nuxtjs/firebase",
+      {
+        config: {
+          apiKey: "AIzaSyALWZdoQh1e0BZwCzVbyuiF1gVgzUTlfB8",
+          authDomain: "vancung-7fd88.firebaseapp.com",
+          projectId: "vancung-7fd88",
+          storageBucket: "vancung-7fd88.appspot.com",
+          messagingSenderId: "404039471408",
+          appId: "1:404039471408:web:09658f85c027adca9678f5",
+          measurementId: "G-QY4REF6FRR",
+        },
+        services: {
+          auth: true, // Just as example. Can be any other service.
+          firestore: true,
+        },
+      },
+    ],
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

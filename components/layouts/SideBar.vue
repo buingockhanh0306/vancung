@@ -1,6 +1,6 @@
 <template>
   <a-layout-sider
-    class="mobile:hidden pc:block"
+    class="hidden pc:block"
     v-model="isOpenSidebar"
     :trigger="null"
     collapsible

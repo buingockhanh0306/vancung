@@ -9,10 +9,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@firebase/app-compat": "^0.2.7",
+    "@nuxtjs/firebase": "^8.2.2",
     "@nuxtjs/tailwindcss": "^6.6.5",
     "ant-design-vue": "^1.7.8",
     "autoprefixer": "^10.4.14",
     "core-js": "^3.25.3",
+    "firebase": "^9.19.1",
     "nuxt": "^2.15.8",
     "postcss": "^8.4.21",
     "scss": "^0.2.4",

@@ -1,10 +1,19 @@
 <template>
-  <a-layout-header>
+  <a-layout-header class="flex align-middle items-center justify-between">
     <a-icon
       class="trigger !text-textW"
       :type="isOpenSidebar ? 'menu-unfold' : 'menu-fold'"
       @click="handleOpenSideBar"
     />
+    <a-button
+      :loading="isLoading"
+      class="items-center"
+      type="primary"
+      icon="download"
+      @click="handleClickDownload"
+    >
+      Tải xuống
+    </a-button>
   </a-layout-header>
 </template>
 
@@ -15,11 +24,18 @@ export default {
       type: Boolean,
       default: true,
     },
+    isLoading: {
+      type: Boolean,
+      default: true,
+    },
   },
   methods: {
     handleOpenSideBar() {
       this.$emit("handleOpenSideBar");
     },
+    handleClickDownload(){
+      this.$emit('handleClickDownload')
+    }
   },
 };
 </script>

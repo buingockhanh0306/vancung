@@ -1,37 +1,13 @@
 <template>
   <Fragment>
     <a-menu theme="dark" :default-selected-keys="['1']">
-      <a-menu-item key="1">
+      <a-menu-item
+        v-for="item in listVc"
+        :key="item.slug"
+        @click="clickDetail(item)"
+      >
         <a-icon type="user" />
-        <span>nav 1</span>
-      </a-menu-item>
-      <a-menu-item key="2">
-        <a-icon type="video-camera" />
-        <span>nav 2</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="upload" />
-        <span>nav 3</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="upload" />
-        <span>nav 3</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="upload" />
-        <span>nav 3</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="upload" />
-        <span>nav 3</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="upload" />
-        <span>nav 3</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="upload" />
-        <span>nav 3</span>
+        <span>{{ item.title }}</span>
       </a-menu-item>
     </a-menu>
   </Fragment>
@@ -39,10 +15,27 @@
 
 <script>
 import { Fragment } from "vue-frag";
+import { mapActions, mapState } from "vuex";
+
 export default {
   name: "NavBar",
   components: {
     Fragment,
+  },
+  computed: {
+    ...mapState(["listVc"]),
+  },
+  created() {
+    this.getListVc();
+  },
+  methods: {
+    ...mapActions(["getListVc"]),
+    async clickDetail(item) {
+      this.$router.push({
+        path: item.slug,
+        query: { id: item.id },
+      });
+    },
   },
 };
 </script>

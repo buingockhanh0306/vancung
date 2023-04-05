@@ -11,6 +11,7 @@
       <Header
         :isOpenSidebar="isOpenSidebar"
         @handleOpenSideBar="isOpenSidebar = !isOpenSidebar"
+        @handleClickDownload="handleClickDownload"
       />
       <a-layout-content
         :style="{
@@ -42,6 +43,13 @@ export default {
       isOpenSidebar: false,
     };
   },
+  methods: {
+    handleClickDownload() {},
+  },
 };
 </script>
-<style></style>
+<style>
+#components-layout-demo-custom-trigger {
+  @apply fixed top-0 left-0 right-0;
+}
+</style>
